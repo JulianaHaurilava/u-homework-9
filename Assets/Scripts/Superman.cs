@@ -1,17 +1,19 @@
-using System;
-using System.Reflection;
 using UnityEngine;
 
 public class Superman : MonoBehaviour
 {
-    private Transform superman;
+    private Transform superman;     // супермен
 
-    [SerializeField] float Power;
+    [SerializeField] float Power;   // сила удара супермена
     void Start()
     {
         superman = GetComponent<Transform>();
     }
 
+    /// <summary>
+    /// При столкновении с врагом, ударяет его
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.rigidbody != null
